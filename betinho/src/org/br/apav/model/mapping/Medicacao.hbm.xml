@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.br.apav.model.Medicacao" table="Medicacao" lazy="false">
+<!-- Identificador da classe -->
+
+
+        <id name="codMedicacao" column="codMedicacao"  >
+ 				<generator class="native"/>
+			</id>
+
+	<many-to-one name="remedio" class="org.br.apav.model.Remedio"
+		column="codRemedio" />
+
+	<!--  many-to-one name="tratamento" class="org.br.apav.model.Tratamento"
+		column="codTratamento"  />
+-->
+	
+	<property name="poslogia" type="string" />
+	<property name="dosagem" type="string" />
+	<property name="horario" type="timestamp" />
+	<property name="diasSemana" type="int" />
+
+	<property name="dataFim" type="date" />
+	<property name="dataInicio" type="date" />
+
+
+
+<!-- Propriedades da classe -->
+</class>
+
+
+</hibernate-mapping>
+
+
+
+

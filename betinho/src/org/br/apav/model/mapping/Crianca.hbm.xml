@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.br.apav.model">
+	<class name="org.br.apav.model.Crianca" table="Crianca"
+		lazy="false">
+		<!-- Identificador da classe -->
+
+		<id name="CodCrianca" column="codCrianca">
+			<generator class="native" />
+		</id>
+		<property name="nome" type="string" />
+		<property name="dataNascimento" type="date" />
+		<property name="nomePai" type="string" />
+		<property name="nomeMae" type="string" />
+		<property name="avoMaterno" type="string" />
+		<property name="avoPaterno" type="string" />
+		<property name="avohMaterno" type="string" />
+		<property name="avohPaterno" type="string" />
+		<property name="encaminhadoPor" type="string" />
+		<property name="dataAbrigamento" type="date" />
+		<property name="dataDesabrigamento" type="date" />
+		<property name="motivoDesabrigamento" type="string" />
+		<property name="certidaoNascimento" type="string" />
+		<property name="rg" type="string" />
+		<property name="cpf" type="string" />
+		<property name="sexo" type="string" />
+		<property name="cidade" type="string" />
+		<property name="uf" type="string" />
+		<property name="carteiraHc" type="string" />
+		<property name="carteiraSus" type="string" />
+		<property name="tipoSanguineo" type="string" />
+		<property name="fatorRh" type="string" />
+		<property name="cartorio" type="string" />
+		<property name="email" type="string" />
+
+
+		<many-to-one name="pcr" class="org.br.apav.model.PCR"
+			column="codPCR" unique="true" />
+
+		<bag name="cargaVirais" lazy="false" cascade="all"  >
+		<key column="codCrianca"/>
+		<one-to-many class="org.br.apav.model.CargaViral"/>
+		</bag>
+		
+		<bag name="antropometrias" lazy="false">
+		<key column="codCrianca"/>
+		<one-to-many class="org.br.apav.model.Antropometria"/>
+		</bag>
+		
+		<bag name="emars" lazy="false" cascade="all"  >
+		<key column="codCrianca"/>
+		<one-to-many class="org.br.apav.model.Emar"/>
+		</bag>
+		
+		<bag name="tratamentos" lazy="false" cascade="all"  >
+		<key column="codCrianca"/>
+		<one-to-many class="org.br.apav.model.Tratamento"/>
+		</bag>
+		
+		<bag name="contatos" lazy="false" cascade="all"  >
+		<key column="codCrianca"/>
+		<one-to-many class="org.br.apav.model.Contato"/>
+		</bag>
+
+	</class>
+</hibernate-mapping>

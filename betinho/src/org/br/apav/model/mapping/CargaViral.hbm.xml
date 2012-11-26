@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.br.apav.model.CargaViral" table="CargaViral" lazy="false">
+<!-- Identificador da classe -->
+
+
+        <id name="codCargaViral" column="codCargaViral"  >
+ 				<generator class="native"/>
+        </id>
+
+		<property name="data" type="date" />
+        <property name="cd8" type="int" />
+		<property name="cd4" type="int" />
+		<property name="log" type="string" />
+	
+
+	
+ 	<many-to-one name="crianca" 
+ 	column="codCrianca" class="org.br.apav.model.Crianca" />
+
+
+
+
+
+<!-- Propriedades da classe -->
+</class>
+
+
+</hibernate-mapping>
+
+
+
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.br.apav.model.PCR" table="PCR" lazy="true">
+	
+		<id name="codPCR" column="codPCR"  >
+			<generator class="native"/>
+		</id>	
+
+		<property name="data" type="timestamp" />
+        <property name="pcr" type="boolean" />
+        
+        <many-to-one name="crianca"
+			class="org.br.apav.model.Crianca"
+			column="codCrianca"
+			lazy="false"
+			unique="true"/>
+ 
+
+	
+
+
+
+
+
+<!-- Propriedades da classe -->
+</class>
+
+
+</hibernate-mapping>

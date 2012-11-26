@@ -1,0 +1,91 @@
+body
+{ 
+    FONT-FAMILY: Arial, Verdana; 
+    FONT-SIZE: 12pt;
+    scrollbar-3d-light-color:#000000;
+	scrollbar-arrow-color:#ffffff;
+	scrollbar-base-color:#ff5400;
+	scrollbar-dark-shadow-color:#ff5400;
+	scrollbar-face-color:#ff8A00;
+	scrollbar-highlight-color:#ffe8b2;
+	scrollbar-shadow-color:#ffe8b2;
+	background-color : #ffffff;
+	margin-bottom : 0;
+	margin-left : 0;
+	margin-right : 0;
+	margin-top : 0; 
+}
+
+.inputtext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+ 	font-weight: normal;
+	border: 1px #FF0000 solid;
+    text-transform: uppercase;
+    size:56
+
+    
+}
+
+.tituloEditar{
+	font-size: 16pt;
+	color: red; 
+	text-decoration: underline
+	
+}
+.tituloList{
+	font-size: 10pt;
+	color: red; 
+	text-decoration: underline
+	
+}
+
+.tdEstilo{
+	width: 400px;
+    text-align: left;
+}
+	
+
+.labelEditar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+	background-color: #FFFFFF;
+ 	font-weight: normal;
+	 /*
+	  #border: 1px #FF0000 solid;
+	  */
+	 
+    text-transform: uppercase;
+    width: 244px;
+    text-align: right; 
+}
+
+
+
+
+a:link {  	
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 14px;
+	color: #FF0000; 
+	font-weight: normal; 
+	text-decoration: none; 
+	line-height: 20px
+}
+a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 14px; 
+	color: #FF0000; 
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 20px
+}
+
+.textnormal {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; line-height: 15px}
+
+.backlight {  background-color: #FFFBF0}
+.backtable {  background-color: #FFDF8A}
+	
+	

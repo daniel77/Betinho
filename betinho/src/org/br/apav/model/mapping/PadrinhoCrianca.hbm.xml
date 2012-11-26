@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.br.apav.model">
+<class name="org.br.apav.model.PadrinhoCrianca" table="crianca_padrinho">   
+<!-- Identificador da classe -->
+
+<composite-id>   
+<key-many-to-one name="crianca" class="Crianca">
+<column name="codCrianca"/>   
+</key-many-to-one>   
+<key-many-to-one name="padrinho" column="codPadrinho" class="Padrinho"/>   
+</composite-id>   
+
+       
+		
+		
+
+  </class>
+</hibernate-mapping>g>

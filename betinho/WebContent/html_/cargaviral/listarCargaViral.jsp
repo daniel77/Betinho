@@ -1,0 +1,58 @@
+<%@ taglib uri="/WEB-INF/tld/c.tld" prefix="c"%>
+<%@ taglib uri="suportweb" prefix="suportweb"%>
+
+<%@page import="org.br.apav.framework.DataUtility"%>
+
+<c:import url="/index.jsp"></c:import>
+
+<jsp:useBean id="crianca" scope="request" class="org.br.apav.model.Crianca" />
+
+<script>
+function submitAcao(perform){
+ if(perform != 'insert' && document.forms[0].codCargaViral.value == '' ){
+ 	alert("Selecione um registro! ");
+ }else{
+ 	document.forms[0].event.value = perform;
+ 	document.forms[0].submit();
+ }
+}
+
+</script>
+
+<form action="cargaviral.html" method="POST">
+<input type='hidden' name="perform" value="load" >
+<input type='hidden' name="event" value="" >
+<input type='hidden' name="codCargaViral" value="" >
+<input type='hidden' name="codCrianca" value="<%=request.getParameter("codCrianca") %>">
+
+<suportweb:opcoes />
+<br>
+<table>
+            <tr>
+                <td class="labelEditar" >
+                    Nome Criança:</td>
+                <td style="width: 624px; text-align: left;">
+                <jsp:getProperty name="crianca" property="nome" /></td>
+            </tr>
+</table>         <br>   
+<table>
+<tr>
+<td>Data do exame</td>
+</tr>
+<tr>
+<c:forEach var="option" items="${cargasVirais}" >
+<tr>
+<td><input type="radio" name="itens"
+ onclick="document.forms[0].codCargaViral.value='<c:out value="${option.codCargaViral}" />';" ></td>
+
+<td width="35" ><font face="arial" size="2"><c:out value="${option.dataExameStr}" /></font></td>
+</tr>
+</c:forEach>
+</table>
+
+
+</form>
+<br><br>
+
+</body>
+</html>

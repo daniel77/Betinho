@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.br.apav.model.Emar" table="Emar" lazy="false"  >
+<!-- Identificador da classe -->
+
+        <id name="CodEmar" column="codEmar"  >
+ 				<generator class="native"/>
+        </id>
+               
+        <property name="dataInicio" type="date" />
+        <property name="dataFim" type="date" />
+
+		<property name="ativo" type="boolean"  />
+
+    
+    	<bag name="remedios" table="emar_remedio" lazy="false"  > 
+	<key column="codEmar" />
+	<many-to-many 
+	class="org.br.apav.model.Remedio" 
+	column="codRemedio" />
+	</bag>
+	
+
+       
+    <many-to-one name="crianca"
+        class="org.br.apav.model.Crianca"
+        column="codCrianca" not-null="true" />
+       
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.br.apav.model">
+<class name="org.br.apav.model.Cid10" table="Cid10" lazy="false"  >
+<!-- Identificador da classe -->
+
+        <id name="cid10" column="cid10"  >
+ 				<generator class="native"/>
+        </id>
+        <property name="opc" type="string"  />
+        <property name="cat" type="string"  />
+		<property name="subcat" type="string"  />
+		<property name="descr" type="string"  />
+		<property name="restrsexo" type="string"  />
+	
+
+  </class>
+</hibernate-mapping>
+
+

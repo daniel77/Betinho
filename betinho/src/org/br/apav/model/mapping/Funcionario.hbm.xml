@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.br.apav.model">
+<class name="org.br.apav.model.Funcionario" table="Funcionario" lazy="false"  >
+<!-- Identificador da classe -->
+
+        <id name="CodFuncionario" column="codFuncionario"  >
+ 				<generator class="native"/>
+        </id>
+         <property name="nome" type="string"  />
+         
+         <property name="dataNascimento" type="date" />
+         
+		<property name="cpf" type="string"  />
+	
+		<property name="rg" type="string"  />
+	
+		<property name="endereco" type="string"  />
+
+		<property name="bairro" type="string"  />
+
+		<property name="telefoneResidencial" type="string"  />
+
+		<property name="telefoneCelular" type="string"  />
+	
+		<property name="telefoneComercial" type="string"  />
+	
+		<property name="estadoCivil" type="string"  />
+
+		<property name="sexo" type="string"  />
+	
+		<property name="cidade" type="string"  />
+
+		<property name="uf" type="string"  />
+
+		<property name="email" type="string"  />
+
+  </class>
+</hibernate-mapping>

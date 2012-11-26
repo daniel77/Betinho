@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.br.apav.model.Tratamento" table="Tratamento" lazy="false">
+	<!-- Identificador da classe
+TODO : UTILIZAR CODCRIANC       
+	-->
+
+
+        <id name="codTratamento" column="codTratamento"  >
+ 				<generator class="native"/>
+			</id>
+
+
+	<many-to-one name="cid10" class="org.br.apav.model.Cid10"
+		column="cid10"  />
+
+		
+		<bag name="medicacao" lazy="false" cascade="delete"  >
+		<key column="codTratamento"/>
+		<one-to-many class="org.br.apav.model.Medicacao"/>
+		</bag>
+
+	        
+        <many-to-one name="crianca"
+			class="org.br.apav.model.Crianca"
+			column="codCrianca"
+			lazy="false" />
+
+
+<!-- Propriedades da classe -->
+</class>
+
+
+</hibernate-mapping>
+

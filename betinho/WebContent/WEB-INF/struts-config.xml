@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+
+<struts-config>
+
+  <global-forwards>
+  <forward name="home" path="/index.jsp" /> 
+  <forward name="failure" path="/erro.jsp" /> 
+  
+  
+  
+  <!--  RELATORIOS -->
+  <forward name="relCriancas" path="/html/relatorios/relatorioDeCriancas.jsp" /> 
+  
+  </global-forwards>
+
+
+	<action-mappings>
+	
+	<action path="/relatorios" type="org.br.apav.action.RelatoriosAction" >
+		<forward name="relCriancas" path="/html_/relatorios/relatorioDeCriancas.jsp" /> 
+		<forward name="relContatos" path="/html_/relatorios/relatorioDeContatos.jsp" /> 
+		<forward name="cid10" path="/html_/relatorios/relatorioCid10.jsp" /> 
+		<forward name="relEmar" path="/html_/relatorios/relatorioEmar.jsp" /> 
+		<forward name="relTratamento" path="/html_/relatorios/relatorioTratamento.jsp" /> 
+	</action>
+
+		<action path="/crianca"
+			type="org.br.apav.action.CriancaAction">
+			<forward name="load"
+				path="/html_/crianca/editarCrianca.jsp" />
+			<forward name="pcr" path="/pcr" />
+			<forward name="list"
+				path="/html_/crianca/listarCrianca.jsp" />
+			<forward name="success"
+				path="/html_/crianca/listarCrianca.jsp" />
+			<forward name="back"
+				path="/pages/mensagem/listarCrianca.jsp" />
+				
+			<forward name="login" path="/login.html" />
+
+			<forward name="pcr" path="/html_/crianca/pcr/editarPCR.jsp" />
+			<forward name="cargaviral" path="/html_/cargaviral/listarCargaViral.jsp" />			
+			<forward name="antropometria" path="/html_/antropometria/listarAntropometria.jsp" />
+			<forward name="emar" path="/html_/emar/listarEmar.jsp" />			
+			<forward name="tratamento" path="/html_/tratamento/listarTratamento.jsp" />	
+			<forward name="contato" path="/html_/contato/listarContato.jsp" />			
+		</action>
+
+
+
+		<action path="/pcr" type="org.br.apav.action.PCRAction">
+			<forward name="success" path="/crianca.html?perform=list" />
+		</action>
+
+		<action path="/login" type="org.br.apav.action.LoginAction">
+			<forward name="load" path="/html_/sistema/login.jsp" />
+			<forward name="failure" path="/html_/sistema/login.jsp" />
+			<forward name="success" path="/index.jsp" />
+		</action>
+
+		<action path="/padrinho"
+			type="org.br.apav.action.PadrinhoAction">
+			<forward name="load"
+				path="/html_/padrinho/editarPadrinho.jsp" />
+			<forward name="list"
+				path="/html_/padrinho/listarPadrinho.jsp" />
+			<forward name="success"
+				path="/html_/padrinho/listarPadrinho.jsp" />
+			<forward name="back"
+				path="/html_/padrinho/listarPadrinho.jsp" />
+			
+			<forward name="login" path="/login.html" />
+		</action>
+
+		<action path="/cid10" type="org.br.apav.action.Cid10Action">
+			<forward name="load" path="/html_/cid10/editarCid10.jsp" />
+			<forward name="list" path="/html_/cid10/listarCid10.jsp" />
+			<forward name="success" path="/html_/cid10/listarCid10.jsp" />
+			<forward name="back" path="/html_/cid10/listarCid10.jsp" />
+			
+			<forward name="login" path="/login.html" />
+		</action>
+
+
+	<action path="/emar"
+			type="org.br.apav.action.EmarAction">
+			<forward name="load"
+				path="/html_/emar/editarEmar.jsp" />
+			<forward name="list"
+				path="/html_/emar/listarEmar.jsp" />
+			<forward name="success"
+				path="/html_/emar/listarEmar.jsp" />
+			<forward name="back"
+				path="/html_/emar/listarEmar.jsp" />
+			
+			<forward name="login" path="/login.html" />
+		</action>
+
+		<action path="/funcionario"
+			type="org.br.apav.action.FuncionarioAction">
+			<forward name="load"
+				path="/html_/funcionario/editarFuncionario.jsp" />
+			<forward name="list"
+				path="/html_/funcionario/listarFuncionario.jsp" />
+			<forward name="success"
+				path="/html_/funcionario/listarFuncionario.jsp" />
+			<forward name="back"
+				path="/html_/funcionario/listarFuncionario.jsp" />
+			
+			<forward name="login" path="/login.html" />
+		</action>
+
+		<action path="/voluntario"
+			type="org.br.apav.action.FuncionarioAction">
+			<forward name="load"
+				path="/html_/voluntario/editarFuncionario.jsp" />
+			<forward name="list"
+				path="/html_/voluntario/listarFuncionario.jsp" />
+			<forward name="success"
+				path="/html_/voluntario/listarFuncionario.jsp" />
+			<forward name="back"
+				path="/html_/voluntario/listarVoluntario.jsp" />
+			
+			<forward name="login" path="/login.html" />
+		</action>
+		<action path="/contato"
+			type="org.br.apav.action.ContatoAction">
+			<forward name="load"
+				path="/html_/contato/editarContato.jsp" />
+			<forward name="list"
+				path="/html_/contato/listarContato.jsp" />
+			<forward name="success"
+				path="/html_/contato/listarContato.jsp" />
+			<forward name="back"
+				path="/html_/contato/listarContato.jsp" />
+			
+			<forward name="login" path="/login.html" />
+		</action>
+
+
+		<action path="/antropometria"
+			type="org.br.apav.action.AntropometriaAction">
+			<forward name="load"
+				path="/html_/antropometria/editarAntropometria.jsp" />
+			<forward name="list"
+				path="/html_/antropometria/listarAntropometria.jsp" />
+			<forward name="success"
+				path="/html_/antropometria/listarAntropometria.jsp" />
+			<forward name="back"
+				path="/html_/antropometria/listarAntropometria.jsp" />
+			
+			<forward name="login" path="/login.html" />
+		</action>
+
+		<action path="/cargaviral"
+			type="org.br.apav.action.CargaViralAction">
+
+			<forward name="load"
+				path="/html_/cargaviral/editarCargaViral.jsp" />
+			<forward name="list"
+				path="/html_/cargaviral/listarCargaViral.jsp" />
+			<forward name="success"
+				path="/html_/cargaviral/listarCargaViral.jsp" />
+			<forward name="back"
+				path="/html_/cargaviral/listarCargaViral.jsp" />
+			
+			<forward name="login" path="/login.html" />
+		</action>
+		
+		<action path="/remedio"
+			type="org.br.apav.action.RemedioAction">
+						<forward name="load"
+				path="/html_/remedio/editarRemedio.jsp" />
+			<forward name="list"
+				path="/html_/remedio/listarRemedio.jsp" />
+			<forward name="success"
+				path="/html_/remedio/listarRemedio.jsp" />
+			<forward name="back"
+				path="/html_/remedio/listarRemedio.jsp" />
+			
+			<forward name="login" path="/login.html" />
+		</action>
+
+		<action path="/medicacao"
+			type="org.br.apav.action.MedicacaoAction">
+						<forward name="load"
+				path="/html_/medicacao/editarMedicacao.jsp" />
+			<forward name="list"
+				path="/html_/medicacao/listarMedicacao.jsp" />
+			<forward name="success"
+				path="/html_/medicacao/listarMedicacao.jsp" />
+			<forward name="back"
+				path="/html_/medicacao/listarMedicacao.jsp" />
+			
+			<forward name="login" path="/login.html" />
+		</action>
+
+
+	<action path="/tratamento"
+			type="org.br.apav.action.TratamentoAction">
+
+			<forward name="load"
+				path="/html_/tratamento/editarTratamento.jsp" />
+			<forward name="list"
+				path="/html_/tratamento/listarTratamento.jsp" />
+			<forward name="success"
+				path="/html_/tratamento/listarTratamento.jsp" />
+			<forward name="back"
+				path="/html_/tratamento/listarTratamento.jsp" />
+			
+			<forward name="medicacao" path="/html_/medicacao/listarMedicacao.jsp" />	
+			
+			<forward name="login" path="/login.html" />
+		</action>
+
+
+
+
+		<action path="/calendar"
+			type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/calendarTag.jsp" />
+
+
+		<action path="/menu"
+			type="org.apache.struts.actions.ForwardAction" parameter="/menu.jsp" />
+
+
+		<action path="/index"
+			type="org.apache.struts.actions.ForwardAction"
+			parameter="/index.jsp" />
+
+	</action-mappings>
+	  <message-resources parameter="org.br.apav.framework.ApplicationResources" /> 
+
+
+</struts-config>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>..::iniciando Betinho::..</title>
+</head>
+<body>
+<div align="center">
+
+</div>
+<script type="text/javascript">
+var exec = 0;
+var timer = null;
+function atualizarContexto()
+{
+  if(exec == 1)
+    clearTimeout(timer);
+ 
+    exec = 1;
+	//window.opener.preencheTotalGrade();
+	document.location = "login.html";
+}
+timer = setInterval("atualizarContexto()",1000);
+</script>
+</body>
+</html>

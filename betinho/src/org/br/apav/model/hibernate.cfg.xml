@@ -1,0 +1,54 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+<property name="hibernate.dialect">
+org.hibernate.dialect.PostgreSQLDialect 
+</property>
+<property name="hibernate.connection.driver_class">
+org.postgresql.Driver
+</property>
+<property name="hibernate.connection.url">
+jdbc:postgresql://localhost/betinho
+</property>
+<property name="hibernate.connection.username">
+postgres
+</property>
+<property name="hibernate.connection.password">
+abc123
+</property>
+<!-- Condiguração do c3p0 -->
+<property name="hibernate.c3p0.max_size">10</property>
+<property name="hibernate.c3p0.min_size">2</property>
+<property name="hibernate.c3p0.timeout">5000</property>
+<property name="hibernate.c3p0.max_statements">1000</property>
+<property name="hibernate.c3p0.idle_test_period">3000</property>
+<property name="hibernate.c3p0.acquire_increment">2</property>
+<!-- Configurações de debug -->
+<property name="show_sql">false</property>
+<property name="hibernate.generate_statistics">false</property>
+<property name="hibernate.use_sql_comments">true</property>
+
+  <!-- Drop and re-create the database schema on startup -->
+
+
+<!-- MAPEAMENTOS DAS TABELAS
+<mapping resource="org/br/apav/model/Funcionario.hbm.xml" />
+<mapping resource="org/br/apav/model/Emar.hbm.xml" />
+ -->
+<mapping resource="org/br/apav/model/mapping/Voluntario.hbm.xml"/>
+<mapping resource="org/br/apav/model/mapping/Acesso.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/Crianca.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/Padrinho.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/Cid10.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/Emar.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/Contato.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/CargaViral.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/Antropometria.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/Remedio.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/PCR.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/Tratamento.hbm.xml" />
+<mapping resource="org/br/apav/model/mapping/Medicacao.hbm.xml" />
+</session-factory>
+</hibernate-configuration>

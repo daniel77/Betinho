@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- Identificador da classe -->
+<class name="org.br.apav.model.Remedio" table="remedio" lazy="false">  
+	
+    	<id name="codRemedio" column="codRemedio">
+			<generator class="native" />
+        </id>
+	
+        <property name="EAN" type="string" />
+        <property name="descricao" type="string" />
+        <property name="formula" type="string" />
+		<property name="qtdeEmbalagem" type="int" />
+		<property name="tipoQtde" type="string" />
+	
+		<bag name="emars" table="emar_remedio" lazy="false"   > 
+	<key column="codRemedio"  />
+	<many-to-many 
+	class="org.br.apav.model.Emar" 
+	column="codEmar" />
+	</bag>
+
+  </class>
+</hibernate-mapping>

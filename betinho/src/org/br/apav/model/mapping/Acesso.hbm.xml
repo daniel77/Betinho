@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.br.apav.model.Acesso" table="Acesso" lazy="false">
+<!-- Identificador da classe -->
+
+
+
+        <id name="CodAcesso" column="codAcesso"  >
+ 				<generator class="native"/>
+        </id>
+		<property name="dataAcesso" type="timestamp" />
+        
+
+	
+ 	<many-to-one name="voluntario"
+        class="org.br.apav.model.Voluntario">
+
+
+        <!-- Used as a DDL hint -->
+        <column name="login" not-null="true" />
+    </many-to-one>
+
+
+
+
+<!-- Propriedades da classe -->
+</class>
+
+
+</hibernate-mapping>
+
